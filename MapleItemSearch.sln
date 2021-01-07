@@ -27,6 +27,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MapleStoryHelper.Standard.C
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MapleUtils.Core.ViewModels", "MapleUtils.Core.ViewModels\MapleUtils.Core.ViewModels.csproj", "{9B2B2E0C-F84B-43C3-BE0E-83B74BF8C82C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MapleBuffHelper", "MapleBuffHelper\MapleBuffHelper.csproj", "{DA6382E0-4BA3-44CF-8D60-AB956FC690AD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -81,6 +83,10 @@ Global
 		{9B2B2E0C-F84B-43C3-BE0E-83B74BF8C82C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9B2B2E0C-F84B-43C3-BE0E-83B74BF8C82C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9B2B2E0C-F84B-43C3-BE0E-83B74BF8C82C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA6382E0-4BA3-44CF-8D60-AB956FC690AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA6382E0-4BA3-44CF-8D60-AB956FC690AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA6382E0-4BA3-44CF-8D60-AB956FC690AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA6382E0-4BA3-44CF-8D60-AB956FC690AD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

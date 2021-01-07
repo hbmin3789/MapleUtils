@@ -45,5 +45,13 @@ namespace MapleUtils.Core.ViewModels
 
         #endregion
 
+        #region Commands
+        protected override void OnNavigate(Type t)
+        {
+            
+        }
+
+        #endregion
+
     }
 }
