@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>MapleStoryHelper.Standard.CharacterLib</RootNamespace>
+    <AssemblyName>MapleStoryHelper.Standard.CharacterLib</AssemblyName>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath></OutputPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Equipment\**" />
+    <EmbeddedResource Remove="Equipment\**" />
+    <None Remove="Equipment\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MapleStoryHelper.Standard.Item\MapleStoryHelper.Standard.Item.csproj" />
+    <ProjectReference Include="..\MapleStoryHelper.Standard.Utils\MapleStoryHelper.Standard.Utils.csproj" />
+    <ProjectReference Include="..\MapleStoryHelper.Standard\MapleStoryHelper.Standard.csproj" />
+  </ItemGroup>
+
+</Project>

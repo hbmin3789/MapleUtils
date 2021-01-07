@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath></OutputPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MapleStoryHelper.Standard.Utils\MapleStoryHelper.Standard.Utils.csproj" />
+    <ProjectReference Include="..\WzComparerR2.WzLib\WzComparerR2.WzLib.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath></OutputPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="ExMethods\**" />
+    <EmbeddedResource Remove="ExMethods\**" />
+    <None Remove="ExMethods\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MapleStory.Standard.Resource\MapleStoryHelper.Standard.Resource.csproj" />
+    <ProjectReference Include="..\MapleStoryHelper.Standard.Boss\MapleStoryHelper.Standard.Boss.csproj" />
+    <ProjectReference Include="..\MapleStoryHelper.Standard.CharacterLib\MapleStoryHelper.Standard.CharacterLib.csproj" />
+    <ProjectReference Include="..\MapleStoryHelper.Standard.SkillLib\MapleStoryHelper.Standard.SkillLib.csproj" />
+    <ProjectReference Include="..\MapleStoryHelper.Standard\MapleStoryHelper.Standard.csproj" />
+  </ItemGroup>
+
+</Project>
