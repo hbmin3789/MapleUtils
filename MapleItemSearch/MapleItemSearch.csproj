@@ -94,5 +94,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MapleUtils.Core.ViewModels\MapleUtils.Core.ViewModels.csproj">
+      <Project>{9b2b2e0c-f84b-43c3-be0e-83b74bf8c82c}</Project>
+      <Name>MapleUtils.Core.ViewModels</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
