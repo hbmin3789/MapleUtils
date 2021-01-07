@@ -5,6 +5,26 @@ VisualStudioVersion = 16.0.30717.126
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MapleItemSearch", "MapleItemSearch\MapleItemSearch.csproj", "{74E51FD7-C9C5-4165-B2DE-78E0C5B2E79E}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MapleStoryHelper.Standard.Resource", "MapleStory.Standard.Resource\MapleStoryHelper.Standard.Resource.csproj", "{74BFA09C-B3C9-4A53-B758-A19C6EE3FC42}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WzComparerR2.Common", "WzComparerR2.Common\WzComparerR2.Common.csproj", "{7CDB3BDF-E196-42E5-9DAC-AEB445FC27F2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WzComparerR2.PluginBase", "WzComparerR2.PluginBase\WzComparerR2.PluginBase.csproj", "{B3291006-D2E8-4E83-8245-D7BAADC8DF34}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WzComparerR2.WzLib", "WzComparerR2.WzLib\WzComparerR2.WzLib.csproj", "{1E3616A1-921A-4546-9B19-3CC33D38414F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MapleStoryHelper.Standard.Item", "MapleStoryHelper.Standard.Item\MapleStoryHelper.Standard.Item.csproj", "{F645DB06-68B7-496F-8D65-069F0E4C85B8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MapleStoryHelper.Standard.MobLib", "MapleStoryHelper.Standard.Mob\MapleStoryHelper.Standard.MobLib.csproj", "{EBDFCEDB-88C3-463F-BF98-0E2659B0092F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MapleStoryHelper.Standard.SkillLib", "MapleStoryHelper.Standard.SkillLib\MapleStoryHelper.Standard.SkillLib.csproj", "{729051D4-0B61-4F10-B80C-FD605911F01B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MapleStoryHelper.Standard", "MapleStoryHelper.Standard\MapleStoryHelper.Standard.csproj", "{F6CF8AA0-6A58-4D0B-BF95-181B7DAFD418}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MapleStoryHelper.Standard.Utils", "MapleStoryHelper.Standard.Utils\MapleStoryHelper.Standard.Utils.csproj", "{EE03F23E-A0CB-4EDF-9889-2DE7BBA05074}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MapleStoryHelper.Standard.CharacterLib", "MapleStoryHelper.Standard.CharacterLib\MapleStoryHelper.Standard.CharacterLib.csproj", "{B4205AF8-D975-4692-941C-31F4ADF88520}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +35,46 @@ Global
 		{74E51FD7-C9C5-4165-B2DE-78E0C5B2E79E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{74E51FD7-C9C5-4165-B2DE-78E0C5B2E79E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{74E51FD7-C9C5-4165-B2DE-78E0C5B2E79E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{74BFA09C-B3C9-4A53-B758-A19C6EE3FC42}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74BFA09C-B3C9-4A53-B758-A19C6EE3FC42}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74BFA09C-B3C9-4A53-B758-A19C6EE3FC42}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74BFA09C-B3C9-4A53-B758-A19C6EE3FC42}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7CDB3BDF-E196-42E5-9DAC-AEB445FC27F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7CDB3BDF-E196-42E5-9DAC-AEB445FC27F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7CDB3BDF-E196-42E5-9DAC-AEB445FC27F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7CDB3BDF-E196-42E5-9DAC-AEB445FC27F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B3291006-D2E8-4E83-8245-D7BAADC8DF34}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3291006-D2E8-4E83-8245-D7BAADC8DF34}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3291006-D2E8-4E83-8245-D7BAADC8DF34}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3291006-D2E8-4E83-8245-D7BAADC8DF34}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1E3616A1-921A-4546-9B19-3CC33D38414F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E3616A1-921A-4546-9B19-3CC33D38414F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E3616A1-921A-4546-9B19-3CC33D38414F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E3616A1-921A-4546-9B19-3CC33D38414F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F645DB06-68B7-496F-8D65-069F0E4C85B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F645DB06-68B7-496F-8D65-069F0E4C85B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F645DB06-68B7-496F-8D65-069F0E4C85B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F645DB06-68B7-496F-8D65-069F0E4C85B8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EBDFCEDB-88C3-463F-BF98-0E2659B0092F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EBDFCEDB-88C3-463F-BF98-0E2659B0092F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EBDFCEDB-88C3-463F-BF98-0E2659B0092F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EBDFCEDB-88C3-463F-BF98-0E2659B0092F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{729051D4-0B61-4F10-B80C-FD605911F01B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{729051D4-0B61-4F10-B80C-FD605911F01B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{729051D4-0B61-4F10-B80C-FD605911F01B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{729051D4-0B61-4F10-B80C-FD605911F01B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F6CF8AA0-6A58-4D0B-BF95-181B7DAFD418}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F6CF8AA0-6A58-4D0B-BF95-181B7DAFD418}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F6CF8AA0-6A58-4D0B-BF95-181B7DAFD418}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F6CF8AA0-6A58-4D0B-BF95-181B7DAFD418}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE03F23E-A0CB-4EDF-9889-2DE7BBA05074}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE03F23E-A0CB-4EDF-9889-2DE7BBA05074}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE03F23E-A0CB-4EDF-9889-2DE7BBA05074}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE03F23E-A0CB-4EDF-9889-2DE7BBA05074}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B4205AF8-D975-4692-941C-31F4ADF88520}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4205AF8-D975-4692-941C-31F4ADF88520}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4205AF8-D975-4692-941C-31F4ADF88520}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4205AF8-D975-4692-941C-31F4ADF88520}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
