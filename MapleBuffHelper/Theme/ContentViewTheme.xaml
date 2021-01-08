@@ -1,0 +1,9 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:MapleBuffHelper.Theme"
+                    xmlns:vm="clr-namespace:MapleUtils.Core.ViewModels;assembly=MapleUtils.Core.ViewModels"
+                    xmlns:controls="clr-namespace:MapleBuffHelper.Controls">
+    <DataTemplate DataType="{x:Type vm:ProcessViewModel}">
+        <controls:ProcessListControl DataContext="{DynamicResource ProcessViewModel}"/>
+    </DataTemplate>
+</ResourceDictionary>
