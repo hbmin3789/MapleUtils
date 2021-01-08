@@ -8,14 +8,8 @@
         mc:Ignorable="d"
         Title="OverlayWindow" Height="450" Width="800"
         Topmost="True" AllowsTransparency="True"
+        WindowStyle="None"
         Background="Transparent">
-    <WindowChrome.WindowChrome>
-        <WindowChrome
-            GlassFrameThickness="0"
-            CornerRadius="0"
-            CaptionHeight="0"
-            ResizeBorderThickness="5" />
-    </WindowChrome.WindowChrome>
     <Grid>
         <TextBlock Text="asd" Foreground="Red"
                    FontSize="30" FontWeight="Bold"/>

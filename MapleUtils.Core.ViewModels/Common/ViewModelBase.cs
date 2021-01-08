@@ -7,8 +7,11 @@ using System.Text;
 
 namespace MapleUtils.Core.ViewModels.Common
 {
+
     public abstract class ViewModelBase : BindableBase
     {
+        public delegate void OnMessageHandler(string message);
+        public OnMessageHandler OnMessage;
         protected object CurrentPage { get; set; }
         protected static IPageService pageService { get; set; }
 

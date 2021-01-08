@@ -29,7 +29,11 @@ namespace MapleBuffHelper.Common
         #endregion
 
         [DllImport("user32.dll")]
-        private static extern bool MoveToEx(IntPtr hdc, int X, int Y, LPPOINT lpPoint);
+        private static extern bool SetWindowPos(
+                                        IntPtr hdc, IntPtr zIndex, 
+                                        int x, int y, 
+                                        int width, int height, 
+                                        uint flag);
         [DllImport("user32.dll")]
         private static extern IntPtr GetDC(IntPtr hWnd);
         [DllImport("user32.dll")]
@@ -47,13 +51,18 @@ namespace MapleBuffHelper.Common
         public static void SetWindowPosition(Window window, IntPtr hTargetWnd)
         {
             var hOverlayWnd = new WindowInteropHelper(window).Handle;
-            var dc = GetDC(hOverlayWnd);
+            
             RECT rect = new RECT();
             GetWindowRect(hTargetWnd, ref rect);
-
-            MoveToEx(dc, rect.left, rect.top, null);
-
-            ReleaseDC(hOverlayWnd, dc);
+            
+            SetWindowPos(
+                hOverlayWnd, 
+                //HWND_TOPMOST
+                (IntPtr)(-1), 
+                rect.left, rect.top, 
+                (int)window.Width, (int)window.Height, 
+                //SWP_SHOWWINDOW
+                0x0040);
         }
     }
 }

@@ -6,20 +6,45 @@
              xmlns:local="clr-namespace:MapleBuffHelper.Controls"
              xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions"
              xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             xmlns:converter="clr-namespace:MapleBuffHelper.Converter"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <converter:SelectedItemToVisibilityConverter x:Key="SelectedItemToVisibilityConverter"/>
+    </UserControl.Resources>
     <i:Interaction.Triggers>
         <i:EventTrigger EventName="Loaded">
             <i:InvokeCommandAction Command="{Binding GetProcessCommand}"/>
         </i:EventTrigger>
     </i:Interaction.Triggers>
     <Grid>
-        <ListView ItemsSource="{Binding ProcessItems}">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <TextBlock Text="{Binding ProcessName}"/>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid x:Name="gdProcessList" Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <TextBox Margin="0,10,0,10"
+                         Width="240" Height="30"
+                         FontSize="20"
+                         Text="{Binding Keyword,UpdateSourceTrigger=PropertyChanged}"/>
+            <ListView Grid.Row="1"
+                      ItemsSource="{Binding FilteredProcessItems}"
+                      SelectedItem="{Binding SelectedProcess}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding MainModule.ModuleName}"/>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Grid>
+        <Grid Grid.Column="1">
+            <Button Width="70" Height="30" Content="오버레이 시작"
+                    Visibility="{Binding SelectedProcess,Converter={StaticResource SelectedItemToVisibilityConverter}}"
+                    Command="{Binding StartOverlayCommand}"/>
+        </Grid>
     </Grid>
 </UserControl>

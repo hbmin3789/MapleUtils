@@ -6,19 +6,54 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
+using System.Linq;
 using System.Text;
 
 namespace MapleUtils.Core.ViewModels
 {
     public class ProcessViewModel : ViewModelBase
     {
-        public static IOverlayService OverlayService { get; set; }
+
+        #region Fields
+
+        public static IOverlayService OverlayService;
+
+        #endregion
+
+        #region Properties
+
+        private bool _isOverlaying;
+        public bool IsOverlaying
+        {
+            get => _isOverlaying;
+            set => SetProperty(ref _isOverlaying, value);
+        }
+
+        private string _keyword;
+        public string Keyword
+        {
+            get => _keyword;
+            set
+            {
+                FilteredProcessItems = new ObservableCollection<Process>(
+                        ProcessItems.Where(x=>x.ProcessName.Contains(value)));
+                SetProperty(ref _keyword, value);
+            }
+                    
+        }
 
         private Process _selectedProcess = null;
         public Process SelectedProcess
         {
             get => _selectedProcess;
             set => SetProperty(ref _selectedProcess, value);
+        }
+
+        private ObservableCollection<Process> _filteredProcessItems;
+        public ObservableCollection<Process> FilteredProcessItems
+        {
+            get => _filteredProcessItems;
+            set => SetProperty(ref _filteredProcessItems, value);
         }
 
         private ObservableCollection<Process> _processItems;
@@ -28,8 +63,14 @@ namespace MapleUtils.Core.ViewModels
             set => SetProperty(ref _processItems, value);
         }
 
+        #endregion
+
+        #region Commands
+
         public DelegateCommand GetProcessCommand { get; set; }
         public DelegateCommand StartOverlayCommand { get; set; }
+
+        #endregion
 
         public ProcessViewModel()
         {
@@ -42,6 +83,7 @@ namespace MapleUtils.Core.ViewModels
         protected override void InitVariables()
         {
             _processItems = new ObservableCollection<Process>();
+            _filteredProcessItems = new ObservableCollection<Process>();
         }
 
         protected override void InitCommands()
@@ -58,6 +100,7 @@ namespace MapleUtils.Core.ViewModels
         {
             Process[] processCollection = Process.GetProcesses();
             ProcessItems = new ObservableCollection<Process>(processCollection);
+            FilteredProcessItems = new ObservableCollection<Process>(ProcessItems);
         }
 
         protected override void OnNavigate(Type t)
@@ -69,7 +112,11 @@ namespace MapleUtils.Core.ViewModels
         {
             if(SelectedProcess != null)
             {
-                OverlayService.StartOverlay(SelectedProcess.ProcessName);
+                var result = OverlayService.StartOverlay(SelectedProcess.MainModule.ModuleName);
+                if (!result)
+                {
+                    OnMessage?.Invoke("");
+                }
             }
         }
 

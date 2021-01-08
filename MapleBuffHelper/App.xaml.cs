@@ -1,4 +1,5 @@
 ﻿using MapleBuffHelper.Services;
+using MapleBuffHelper.View;
 using MapleUtils.Core.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -16,6 +17,7 @@ namespace MapleBuffHelper
     public partial class App : Application
     {
         public static OverlayService OverlayService { get; set; }
+        public static OverlayWindow OverlayWindow { get; set; }
 
         protected override void OnStartup(StartupEventArgs e)
         {
@@ -27,6 +29,7 @@ namespace MapleBuffHelper
         private void InitVariables()
         {
             OverlayService = new OverlayService();
+            OverlayWindow = new OverlayWindow();
         }
 
         private void InitServices()

@@ -71,6 +71,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Converter\SelectedItemToVisibilityConverter.cs" />
     <Compile Include="Services\OverlayService.cs" />
     <Compile Include="Services\Win32Service.cs" />
     <Compile Include="View\OverlayWindow.xaml.cs">
