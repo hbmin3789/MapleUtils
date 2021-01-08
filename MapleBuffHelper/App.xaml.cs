@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MapleBuffHelper.Services;
+using MapleUtils.Core.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -13,5 +15,23 @@ namespace MapleBuffHelper
     /// </summary>
     public partial class App : Application
     {
+        public static OverlayService OverlayService { get; set; }
+
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            base.OnStartup(e);
+            InitVariables();
+            InitServices();
+        }
+
+        private void InitVariables()
+        {
+            OverlayService = new OverlayService();
+        }
+
+        private void InitServices()
+        {
+            ProcessViewModel.OverlayService = OverlayService;
+        }
     }
 }

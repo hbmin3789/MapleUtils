@@ -1,4 +1,5 @@
 ﻿using MapleUtils.Core.ViewModels.Common;
+using MapleUtils.Core.ViewModels.Interfaces;
 using Prism.Commands;
 using Prism.Mvvm;
 using System;
@@ -11,6 +12,15 @@ namespace MapleUtils.Core.ViewModels
 {
     public class ProcessViewModel : ViewModelBase
     {
+        public static IOverlayService OverlayService { get; set; }
+
+        private Process _selectedProcess = null;
+        public Process SelectedProcess
+        {
+            get => _selectedProcess;
+            set => SetProperty(ref _selectedProcess, value);
+        }
+
         private ObservableCollection<Process> _processItems;
         public ObservableCollection<Process> ProcessItems
         {
@@ -19,6 +29,7 @@ namespace MapleUtils.Core.ViewModels
         }
 
         public DelegateCommand GetProcessCommand { get; set; }
+        public DelegateCommand StartOverlayCommand { get; set; }
 
         public ProcessViewModel()
         {
@@ -36,6 +47,7 @@ namespace MapleUtils.Core.ViewModels
         protected override void InitCommands()
         {
             GetProcessCommand = new DelegateCommand(GetProcess);
+            StartOverlayCommand = new DelegateCommand(StartOverlay);
         }
 
         #endregion
@@ -51,6 +63,14 @@ namespace MapleUtils.Core.ViewModels
         protected override void OnNavigate(Type t)
         {
 
+        }
+
+        private void StartOverlay()
+        {
+            if(SelectedProcess != null)
+            {
+                OverlayService.StartOverlay(SelectedProcess.ProcessName);
+            }
         }
 
         #endregion

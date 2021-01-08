@@ -22,6 +22,7 @@ namespace MapleBuffHelper.View
         public OverlayWindow()
         {
             InitializeComponent();
+            App.OverlayService.SetOverlayWindow(this);
         }
     }
 }

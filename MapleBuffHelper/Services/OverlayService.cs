@@ -1,4 +1,5 @@
 ﻿using MapleBuffHelper.Common;
+using MapleUtils.Core.ViewModels.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +9,7 @@ using System.Windows;
 
 namespace MapleBuffHelper.Services
 {
-    public class OverlayService
+    public class OverlayService : IOverlayService
     {
         private Window _overlayWindow;
 
@@ -31,9 +32,10 @@ namespace MapleBuffHelper.Services
             _overlayWindow = overlayWindow;
         }
 
-        public void StartOverlay()
+        public void StartOverlay(string targetProcessName)
         {
-            //Win32Service.SetWindowPosition(_overlayWindow, );
+            IntPtr hTargetWnd = Win32Service.GetProcessHandle(targetProcessName);
+            Win32Service.SetWindowPosition(_overlayWindow, hTargetWnd);
         }
     }
 }
