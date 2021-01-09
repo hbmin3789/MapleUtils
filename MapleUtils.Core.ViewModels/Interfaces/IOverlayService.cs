@@ -6,6 +6,7 @@ namespace MapleUtils.Core.ViewModels.Interfaces
 {
     public interface IOverlayService
     {
-        bool StartOverlay(string targetProcessName);
+        bool StartOverlay(string targetWindowName);
+        bool StartOverlay(IntPtr targetWindowHandle);
     }
 }

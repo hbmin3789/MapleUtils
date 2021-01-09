@@ -44,10 +44,15 @@ namespace MapleBuffHelper.Services
         /// </summary>
         /// <param name="targetProcessName">오버레이 할 프로세스 이름</param>
         /// <returns></returns>
-        public bool StartOverlay(string targetProcessName)
+        public bool StartOverlay(string targetWindowName)
         {
-            _hTargetWnd = Win32Service.GetProcessHandle(targetProcessName);
-            if(_hTargetWnd == null)
+            return StartOverlay(Win32Service.GetProcessHandle(targetWindowName));
+        }
+
+        public bool StartOverlay(IntPtr targetWindowHandle)
+        {
+            _hTargetWnd = targetWindowHandle;
+            if (_hTargetWnd == IntPtr.Zero)
             {
                 return false;
             }

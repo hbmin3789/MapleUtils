@@ -50,19 +50,16 @@ namespace MapleBuffHelper.Common
 
         public static void SetWindowPosition(Window window, IntPtr hTargetWnd)
         {
-            var hOverlayWnd = new WindowInteropHelper(window).Handle;
-            
-            RECT rect = new RECT();
-            GetWindowRect(hTargetWnd, ref rect);
-            
-            SetWindowPos(
-                hOverlayWnd, 
-                //HWND_TOPMOST
-                (IntPtr)(-1), 
-                rect.left, rect.top, 
-                (int)window.Width, (int)window.Height, 
-                //SWP_SHOWWINDOW
-                0x0040);
+            App.Current.Dispatcher.Invoke(() => 
+            {
+                var hOverlayWnd = new WindowInteropHelper(window).Handle;
+
+                RECT rect = new RECT();
+                GetWindowRect(hTargetWnd, ref rect);
+
+                window.Left = rect.left;
+                window.Top = rect.right;
+            });
         }
     }
 }

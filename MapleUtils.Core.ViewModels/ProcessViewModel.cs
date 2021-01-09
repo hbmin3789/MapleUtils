@@ -99,7 +99,7 @@ namespace MapleUtils.Core.ViewModels
         private void GetProcess()
         {
             Process[] processCollection = Process.GetProcesses();
-            ProcessItems = new ObservableCollection<Process>(processCollection);
+            ProcessItems = new ObservableCollection<Process>(processCollection.Where(x=>x.MainWindowHandle != IntPtr.Zero));
             FilteredProcessItems = new ObservableCollection<Process>(ProcessItems);
         }
 
@@ -112,7 +112,7 @@ namespace MapleUtils.Core.ViewModels
         {
             if(SelectedProcess != null)
             {
-                var result = OverlayService.StartOverlay(SelectedProcess.MainModule.ModuleName);
+                var result = OverlayService.StartOverlay(SelectedProcess.MainWindowHandle);
                 if (!result)
                 {
                     OnMessage?.Invoke("");
