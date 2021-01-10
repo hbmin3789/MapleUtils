@@ -9,7 +9,8 @@
         Title="OverlayWindow" Height="450" Width="800"
         Topmost="True" AllowsTransparency="True"
         WindowStyle="None"
-        Background="Transparent">
+        Background="Transparent"
+        StateChanged="Window_StateChanged">
     <Grid>
         <TextBlock Text="asd" Foreground="Red"
                    FontSize="30" FontWeight="Bold"/>

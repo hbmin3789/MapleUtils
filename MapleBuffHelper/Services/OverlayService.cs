@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Timers;
 using System.Windows;
@@ -12,7 +13,9 @@ namespace MapleBuffHelper.Services
 {
     public class OverlayService : IOverlayService
     {
-        private Timer _redrawTimer;
+        private object _lock;
+        private bool _isThreadStart;
+        private Thread _redrawThread;
         private Window _overlayWindow;
         private IntPtr _hTargetWnd;
 
@@ -20,12 +23,42 @@ namespace MapleBuffHelper.Services
 
         public OverlayService()
         {
-
+            InitializeVariables();
         }
 
-        public OverlayService(Window pverlayWindow)
+        public OverlayService(Window pverlayWindow) : this()
         {
             _overlayWindow = pverlayWindow;
+        }
+
+        #endregion
+
+        #region Initialize
+
+        private void InitializeVariables()
+        {
+            _lock = new object();
+
+            InitOverlayThread();
+        }
+
+        private void InitOverlayThread()
+        {
+            _redrawThread = new Thread(() =>
+            {
+                while (true)
+                {
+                    if (!_isThreadStart)
+                    {
+                        break;
+                    }
+                    App.Current.Dispatcher.Invoke(() =>
+                    {
+                        Win32Service.SetWindowPosition(_overlayWindow, _hTargetWnd);
+                    });
+                    Thread.Sleep(1);
+                }
+            });
         }
 
         #endregion
@@ -60,32 +93,37 @@ namespace MapleBuffHelper.Services
             _overlayWindow.Show();
             Win32Service.SetWindowPosition(_overlayWindow, _hTargetWnd);
 
-            StartRedrawTimer();
+            StopOverlayWindowThread();
+            InitOverlayThread();
+            StartOverlayThread();
 
             return true;
         }
 
-        private void StartRedrawTimer()
-        {
-            if(_redrawTimer == null)
-            {
-                _redrawTimer = new Timer();
-                _redrawTimer.Elapsed += _redrawTimer_Elapsed;
-                _redrawTimer.Interval = 300;
+        #region Thread Methods
 
-                _redrawTimer.Start();
+        private void StartOverlayThread()
+        {
+            lock (_lock)
+            {
+                _isThreadStart = true;
+            }
+            _redrawThread.Start();
+        }
+
+        private void StopOverlayWindowThread()
+        {
+            lock(_lock)
+            {
+                _isThreadStart = false;
+                if (_redrawThread.IsAlive)
+                {
+                    _redrawThread?.Join();
+                }
             }
         }
 
-        private void _redrawTimer_Elapsed(object sender, ElapsedEventArgs e)
-        {
-            Win32Service.SetWindowPosition(_overlayWindow, _hTargetWnd);
-        }
+        #endregion
 
-        private void StopRedrawTimer()
-        {
-            _redrawTimer.Stop();
-            _redrawTimer = null;
-        }
     }
 }
