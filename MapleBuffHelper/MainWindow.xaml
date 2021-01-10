@@ -4,9 +4,17 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MapleBuffHelper"
+        xmlns:vm="clr-namespace:MapleUtils.Core.ViewModels;assembly=MapleUtils.Core.ViewModels"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        
+        <TabControl>
+            <TabItem Header="프로그램 목록">
+                <ContentControl Content="{StaticResource ProcessViewModel}"/>
+            </TabItem>
+            <TabItem Header="스킬 관리">
+                <ContentControl/>
+            </TabItem>
+        </TabControl>
     </Grid>
 </Window>
