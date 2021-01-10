@@ -8,4 +8,8 @@
     <PackageReference Include="Prism.Core" Version="8.0.0.1909" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\MapleStoryHelper.Standard.SkillLib\MapleStoryHelper.Standard.SkillLib.csproj" />
+  </ItemGroup>
+
 </Project>
