@@ -6,9 +6,11 @@
 
   <ItemGroup>
     <PackageReference Include="Prism.Core" Version="8.0.0.1909" />
+    <PackageReference Include="runtime.osx.10.10-x64.CoreCompat.System.Drawing" Version="5.8.64" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\MapleStory.Standard.Resource\MapleStoryHelper.Standard.Resource.csproj" />
     <ProjectReference Include="..\MapleStoryHelper.Standard.SkillLib\MapleStoryHelper.Standard.SkillLib.csproj" />
   </ItemGroup>
 

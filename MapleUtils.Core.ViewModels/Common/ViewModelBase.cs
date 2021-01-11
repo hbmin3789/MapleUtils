@@ -15,6 +15,12 @@ namespace MapleUtils.Core.ViewModels.Common
         protected object CurrentPage { get; set; }
         protected static IPageService pageService { get; set; }
 
+        public ViewModelBase()
+        {
+            InitCommands();
+            InitVariables();
+        }
+
         public DelegateCommand NavigateCommand { get; set; }
 
         protected abstract void InitVariables();

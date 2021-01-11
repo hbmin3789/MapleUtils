@@ -72,10 +72,9 @@ namespace MapleUtils.Core.ViewModels
 
         #endregion
 
-        public ProcessViewModel()
+        public ProcessViewModel() : base()
         {
-            InitVariables();
-            InitCommands();
+
         }
 
         #region Initialize

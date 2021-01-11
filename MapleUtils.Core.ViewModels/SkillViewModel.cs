@@ -34,10 +34,9 @@ namespace MapleUtils.Core.ViewModels
 
         public DelegateCommand SetSkillCommand { get; set; }
 
-        public SkillViewModel()
+        public SkillViewModel() : base()
         {
-            InitVariables();
-            InitCommands();
+
         }
 
 

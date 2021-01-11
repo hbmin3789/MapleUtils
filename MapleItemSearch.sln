@@ -29,12 +29,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MapleUtils.Core.ViewModels"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MapleBuffHelper", "MapleBuffHelper\MapleBuffHelper.csproj", "{DA6382E0-4BA3-44CF-8D60-AB956FC690AD}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MaterialDesignColors.Wpf", "MaterialDesignColors.Wpf\MaterialDesignColors.Wpf.csproj", "{9C695AD5-1E8A-4507-ABA0-EC56CADFAB96}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MaterialDesignThemes.MahApps", "MaterialDesignThemes.MahApps\MaterialDesignThemes.MahApps.csproj", "{0C6DDA94-F243-46A7-8CE1-7E9226B2A60F}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MaterialDesignThemes.Wpf", "MaterialDesignThemes.Wpf\MaterialDesignThemes.Wpf.csproj", "{38F24374-CFF4-45EA-98EB-42C0EB950853}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -93,18 +87,6 @@ Global
 		{DA6382E0-4BA3-44CF-8D60-AB956FC690AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DA6382E0-4BA3-44CF-8D60-AB956FC690AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DA6382E0-4BA3-44CF-8D60-AB956FC690AD}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9C695AD5-1E8A-4507-ABA0-EC56CADFAB96}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9C695AD5-1E8A-4507-ABA0-EC56CADFAB96}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9C695AD5-1E8A-4507-ABA0-EC56CADFAB96}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9C695AD5-1E8A-4507-ABA0-EC56CADFAB96}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0C6DDA94-F243-46A7-8CE1-7E9226B2A60F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0C6DDA94-F243-46A7-8CE1-7E9226B2A60F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0C6DDA94-F243-46A7-8CE1-7E9226B2A60F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0C6DDA94-F243-46A7-8CE1-7E9226B2A60F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{38F24374-CFF4-45EA-98EB-42C0EB950853}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{38F24374-CFF4-45EA-98EB-42C0EB950853}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{38F24374-CFF4-45EA-98EB-42C0EB950853}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{38F24374-CFF4-45EA-98EB-42C0EB950853}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

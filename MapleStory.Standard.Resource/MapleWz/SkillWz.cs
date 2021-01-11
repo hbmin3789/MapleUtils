@@ -21,21 +21,9 @@ namespace MapleStoryHelper.Framework.ResourceManager
         {
             List<SkillBase> retval = new List<SkillBase>();
 
-            List<SkillBase> skills1 = GetDefaultSkills();
-            List<SkillBase> skills2 = GetVSkills1();
-            List<SkillBase> skills3 = GetVSkills2();
-
-            retval = skills1;
-
-            for (int i = 0; i < skills2.Count; i++)
-            {
-                retval.Add(skills2[i]);
-            }
-
-            for (int i = 0; i < skills3.Count; i++)
-            {
-                retval.Add(skills3[i]);
-            }
+            retval = GetDefaultSkills();
+            retval.AddRange(GetVSkills1());
+            retval.AddRange(GetVSkills2());
 
             LoadImage(ref retval);
             LoadText(ref retval);

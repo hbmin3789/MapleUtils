@@ -6,8 +6,10 @@
              xmlns:local="clr-namespace:MapleBuffHelper.Controls"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-        <Image/>
-        
+    <Grid Background="{DynamicResource MaterialDesignPaper}">
+        <StackPanel>
+            <TextBlock Text="{Binding EWindowKey}"/>
+            <Image Source="{Binding ImagePath}"/>
+        </StackPanel>
     </Grid>
 </UserControl>

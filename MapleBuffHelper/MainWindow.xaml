@@ -5,8 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MapleBuffHelper"
         xmlns:vm="clr-namespace:MapleUtils.Core.ViewModels;assembly=MapleUtils.Core.ViewModels"
+        xmlns:converter="clr-namespace:MapleBuffHelper.Converter"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
+    <Window.Resources>
+        <converter:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
+    </Window.Resources>
     <Grid>
         <TabControl>
             <TabItem Header="프로그램 목록">
@@ -16,5 +20,10 @@
                 <ContentControl/>
             </TabItem>
         </TabControl>
+        <ProgressBar Style="{StaticResource MaterialDesignCircularProgressBar}"
+                     Visibility="{Binding 
+                     Source={StaticResource WzViewModel},
+                     Path=IsLoading,
+                     Converter={StaticResource BooleanToVisibilityConverter}}"/>
     </Grid>
 </Window>
