@@ -20,7 +20,6 @@ namespace MapleBuffHelper.View
     /// </summary>
     public partial class OverlayWindow : Window
     {
-
         public OverlayWindow()
         {
             InitializeComponent();

@@ -36,7 +36,7 @@ namespace MapleUtils.Core.ViewModels
             set
             {
                 FilteredProcessItems = new ObservableCollection<Process>(
-                        ProcessItems.Where(x=>x.ProcessName.Contains(value)));
+                        ProcessItems.Where(x=>x.ProcessName.Length != 0).Where(x=>x.MainWindowHandle != IntPtr.Zero));
                 SetProperty(ref _keyword, value);
             }
                     

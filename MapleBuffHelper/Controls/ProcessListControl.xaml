@@ -36,7 +36,7 @@
                       SelectedItem="{Binding SelectedProcess}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <TextBlock Text="{Binding MainModule.ModuleName}"/>
+                        <TextBlock Text="{Binding ProcessName}"/>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
