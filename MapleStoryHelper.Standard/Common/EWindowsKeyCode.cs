@@ -4,6 +4,8 @@ using System.Text;
 
 namespace MapleStoryHelper.Standard.Common
 {
+    //System.Window.Input 참조를 하지 않으려고 만든 Enum
+    //System.Window.Input namespace 안에 있는 그대로 긁어옴
     public enum EWindowsKeyCode
     {
         //

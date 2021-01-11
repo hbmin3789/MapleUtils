@@ -71,6 +71,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Controls\SkillControl.xaml.cs">
+      <DependentUpon>SkillControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Converter\SelectedItemToVisibilityConverter.cs" />
     <Compile Include="Services\OverlayService.cs" />
     <Compile Include="Services\Win32Service.cs" />
@@ -82,6 +85,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Controls\ProcessListControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\SkillControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
