@@ -96,10 +96,6 @@
     <Compile Include="View\OverlayWindow.xaml.cs">
       <DependentUpon>OverlayWindow.xaml</DependentUpon>
     </Compile>
-    <Page Include="Controls\KeySettingControl.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Controls\ProcessListControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -123,9 +119,6 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Controls\KeySettingControl.xaml.cs">
-      <DependentUpon>KeySettingControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Controls\ProcessListControl.xaml.cs">
       <DependentUpon>ProcessListControl.xaml</DependentUpon>
@@ -177,9 +170,17 @@
     <Folder Include="Common\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\MapleStoryHelper.Standard.SkillLib\MapleStoryHelper.Standard.SkillLib.csproj">
+      <Project>{729051d4-0b61-4f10-b80c-fd605911f01b}</Project>
+      <Name>MapleStoryHelper.Standard.SkillLib</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MapleUtils.Core.ViewModels\MapleUtils.Core.ViewModels.csproj">
       <Project>{9b2b2e0c-f84b-43c3-be0e-83b74bf8c82c}</Project>
       <Name>MapleUtils.Core.ViewModels</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WzComparerR2.Common\WzComparerR2.Common.csproj">
+      <Project>{7cdb3bdf-e196-42e5-9dac-aeb445fc27f2}</Project>
+      <Name>WzComparerR2.Common</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

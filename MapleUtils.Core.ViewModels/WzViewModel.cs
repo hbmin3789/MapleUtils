@@ -8,7 +8,7 @@ using System.Text;
 
 namespace MapleUtils.Core.ViewModels
 {
-    public class WzViewModel : ViewModelBase
+    public class WzViewModel : SkillListViewModelBase
     {
         #region Member
 
@@ -26,13 +26,6 @@ namespace MapleUtils.Core.ViewModels
             set => SetProperty(ref _isLoading, value);
         }
 
-        private ObservableCollection<SkillBase> _skillItems;
-        public ObservableCollection<SkillBase> SkillItems
-        {
-            get => _skillItems;
-            set => SetProperty(ref _skillItems, value);
-        }
-
         #endregion
 
         public WzViewModel() : base()
@@ -45,16 +38,19 @@ namespace MapleUtils.Core.ViewModels
 
         protected override void InitVariables()
         {
+            base.InitVariables();
             _lock = new object();
             _mapleWz = new MapleWz();
-
-            _skillItems = new ObservableCollection<SkillBase>();
         }
 
         protected override void InitCommands()
         {
-            
+            base.InitCommands();
         }
+
+        #endregion
+
+        #region Wz
 
         private void LoadMapleWz()
         {
@@ -63,12 +59,10 @@ namespace MapleUtils.Core.ViewModels
 
         private async void LoadSkillList()
         {
-            lock (_lock)
-            {
-                IsLoading = true;
-                SkillItems = new ObservableCollection<SkillBase>(_mapleWz.GetSkills());
-                IsLoading = false;
-            }
+            IsLoading = true;
+            SkillItems = new ObservableCollection<SkillBase>(_mapleWz.GetSkills());
+            FilteredSkillItems = new ObservableCollection<SkillBase>(SkillItems);
+            IsLoading = false;
         }
 
         #endregion
