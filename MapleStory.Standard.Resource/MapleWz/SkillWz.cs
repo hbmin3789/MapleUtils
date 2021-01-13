@@ -21,9 +21,9 @@ namespace MapleStoryHelper.Framework.ResourceManager
         {
             List<SkillBase> retval = new List<SkillBase>();
 
-            retval = GetDefaultSkills();
-            retval.AddRange(GetVSkills1());
-            retval.AddRange(GetVSkills2());
+            retval = GetSkills(SkillWzStruct);
+            retval.AddRange(GetSkills(Skill001WzStruct));
+            retval.AddRange(GetSkills(Skill002WzStruct));
 
             LoadImage(ref retval);
             LoadText(ref retval);
@@ -68,11 +68,11 @@ namespace MapleStoryHelper.Framework.ResourceManager
             }
         }
 
-        private List<SkillBase> GetDefaultSkills()
+        private List<SkillBase> GetSkills(Wz_Structure wzStruct)
         {
             List<SkillBase> retval = new List<SkillBase>();
 
-            var nodes = SkillWzStruct.WzNode.Nodes;
+            var nodes = wzStruct.WzNode.Nodes;
 
             for (int i=0;i< nodes.Count; i++)
             {
@@ -114,25 +114,6 @@ namespace MapleStoryHelper.Framework.ResourceManager
                 newItem.SkillCode = skills[i].Text;
                 retval.Add(newItem);
             }
-
-            return retval;
-        }
-
-        private List<SkillBase> GetVSkills1()
-        {
-            List<SkillBase> retval = new List<SkillBase>();
-
-
-
-            return retval;
-        }
-
-        private List<SkillBase> GetVSkills2()
-        {
-            List<SkillBase> retval = new List<SkillBase>();
-
-
-
 
             return retval;
         }

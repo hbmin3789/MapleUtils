@@ -4,6 +4,7 @@ using MapleUtils.Core.ViewModels.Common;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
 using System.Text;
 
 namespace MapleUtils.Core.ViewModels
@@ -18,6 +19,16 @@ namespace MapleUtils.Core.ViewModels
         #endregion
 
         #region Properties
+
+        public override string Keyword
+        {
+            get => _keyword;
+            set
+            {
+                SetProperty(ref _keyword, value);
+                FilteredSkillItems = new ObservableCollection<SkillBase>(SkillItems.Where(x=>x.SkillName.Contains(value)));
+            }
+        }
 
         private bool _isLoading = false;
         public bool IsLoading

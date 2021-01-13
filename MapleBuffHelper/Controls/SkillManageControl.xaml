@@ -7,6 +7,12 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800"
              DataContext="{StaticResource WzViewModel}">
+    <UserControl.Resources>
+        <Style x:Key="TextBlockHeaderStyle" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="15"/>
+            <Setter Property="Margin" Value="5"/>
+        </Style>
+    </UserControl.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -15,20 +21,52 @@
         </Grid.ColumnDefinitions>
         
         <!-- Skill Search -->
-        <local:SkillListControl Grid.Column="0"/>
+        <Grid Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <TextBlock Style="{StaticResource TextBlockHeaderStyle}"
+                       Text="추가할 스킬 선택"/>
+            <local:SkillListControl Grid.Row="1" 
+                                    DataContext="{StaticResource WzViewModel}"/>
+        </Grid>
         
         <!-- Skill Info -->
-        <Grid Grid.Column="1">
-            <DockPanel VerticalAlignment="Center">
-                <Image Width="30" Height="30"
-                       Source="{Binding SelectedSkill.ImgBitmapSource}"/>
+        <Grid Grid.Column="1"
+              DataContext="{Binding SelectedSkill, Source={StaticResource WzViewModel}}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition/>
+                <RowDefinition Height="150"/>
+            </Grid.RowDefinitions>
+            <TextBlock Style="{StaticResource TextBlockHeaderStyle}"
+                       Text="스킬 상세"/>
+            <DockPanel VerticalAlignment="Top" Grid.Row="1">
+                <Image Width="100" Height="100"
+                       Source="{Binding ImgByte}"/>
                 <StackPanel>
-                    <TextBlock Text="{Binding SelectedSkill.SkillName}"/>
+                    <TextBlock Margin="10,0,0,0" 
+                               FontSize="16" TextWrapping="WrapWithOverflow"
+                               Text="{Binding SkillName}"/>
                 </StackPanel>
             </DockPanel>
+            <Grid Grid.Row="2">
+                <Button Margin="0,10,10,0"
+                        HorizontalAlignment="Right" VerticalAlignment="Top"
+                        Content="추가"/>
+            </Grid>
         </Grid>
         
         <!-- Selected Skill List -->
-        <local:SkillListControl Grid.Column="2" DataContext="{StaticResource SkillViewModel}"/>
+        <Grid Grid.Column="2" DataContext="{StaticResource SkillViewModel}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <TextBlock Style="{StaticResource TextBlockHeaderStyle}"
+                       Text="추가된 스킬"/>
+            <local:SkillListControl Grid.Row="1"/>
+        </Grid>
     </Grid>
 </UserControl>

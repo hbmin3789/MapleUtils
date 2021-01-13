@@ -16,28 +16,28 @@ namespace MapleUtils.Core.ViewModels.Common
         #region Properties
 
         protected string _keyword;
-        public string Keyword
+        public virtual string Keyword
         {
             get => _keyword;
             set => SetProperty(ref _keyword, value);
         }
 
         protected ObservableCollection<SkillBase> _skillItems;
-        public ObservableCollection<SkillBase> SkillItems
+        public virtual ObservableCollection<SkillBase> SkillItems
         {
             get => _skillItems;
             set => SetProperty(ref _skillItems, value);
         }
 
         protected ObservableCollection<SkillBase> _filteredSkillItems;
-        public ObservableCollection<SkillBase> FilteredSkillItems
+        public virtual ObservableCollection<SkillBase> FilteredSkillItems
         {
             get => _filteredSkillItems;
             set => SetProperty(ref _filteredSkillItems, value);
         }
 
         protected SkillBase _selectedSkill;
-        public SkillBase SelectedSkill
+        public virtual SkillBase SelectedSkill
         {
             get => _selectedSkill;
             set => SetProperty(ref _selectedSkill, value);
@@ -84,7 +84,7 @@ namespace MapleUtils.Core.ViewModels.Common
 
         protected override void OnNavigate(Type t)
         {
-            throw new NotImplementedException();
+            
         }
     }
 }

@@ -13,6 +13,13 @@ namespace MapleStoryHelper.Standard.SkillLib.Model
 {
     public class SkillBase : Skill
     {
+        private int _coolTime;
+        public int CoolTime
+        {
+            get => _coolTime;
+            set => SetProperty(ref _coolTime, value);
+        }
+
         [JsonIgnore]
         public int PercentDamage
         {
@@ -282,6 +289,8 @@ namespace MapleStoryHelper.Standard.SkillLib.Model
                         break;
                 }
             }
+
+            if (skill.common.ContainsKey("cooltime")) skill.CoolTime = Convert.ToInt32(skill.common["cooltime"]);
 
             if ((skill.common.ContainsKey("forceCon") || (skill.levelCommon.Count > 0 && skill.levelCommon[0].ContainsKey("forceCon"))) && skill.Hyper == HyperSkillType.None)
             {

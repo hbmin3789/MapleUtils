@@ -5,17 +5,22 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:MapleBuffHelper.Controls"
              xmlns:skill="clr-namespace:MapleStoryHelper.Standard.SkillLib.Model;assembly=MapleStoryHelper.Standard.SkillLib"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800"
-             DataContext="{StaticResource WzViewModel}">
+             d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition/>
+            <RowDefinition Height="60"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <TextBox/>
+        <Grid Grid.Row="0">
+            <TextBox VerticalAlignment="Center" 
+                     materialDesign:HintAssist.Hint="검색"
+                     Text="{Binding Keyword,UpdateSourceTrigger=PropertyChanged}"/>
+        </Grid>
         <ListView Grid.Row="1"
-                  ItemsSource="{Binding SkillItems}">
+                  ItemsSource="{Binding FilteredSkillItems}"
+                  SelectedItem="{Binding SelectedSkill}">
             <ListView.ItemTemplate>
                 <DataTemplate DataType="{x:Type skill:SkillBase}">
                     <Grid>
@@ -25,9 +30,9 @@
                         </Grid.ColumnDefinitions>
                         <Image Grid.Column="0"
                                Source="{Binding ImgByte}"/>
-                        <StackPanel Grid.Column="1">
-                            <TextBlock/>
-                            <TextBlock/>
+                        <StackPanel Grid.Column="1" Margin="5,0,0,0">
+                            <TextBlock Text="{Binding SkillName}"/>
+                            <TextBlock Text="{Binding CoolTime,StringFormat={}쿨타임 : {0}초}"/>
                         </StackPanel>
                     </Grid>
                 </DataTemplate>

@@ -2,8 +2,12 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:local="clr-namespace:MapleBuffHelper.Theme"
                     xmlns:vm="clr-namespace:MapleUtils.Core.ViewModels;assembly=MapleUtils.Core.ViewModels"
+                    xmlns:vmBase="clr-namespace:MapleUtils.Core.ViewModels.Common;assembly=MapleUtils.Core.ViewModels"
                     xmlns:controls="clr-namespace:MapleBuffHelper.Controls">
     <DataTemplate DataType="{x:Type vm:ProcessViewModel}">
         <controls:ProcessListControl DataContext="{DynamicResource ProcessViewModel}"/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vmBase:SkillListViewModelBase}">
+        <controls:SkillManageControl/>
     </DataTemplate>
 </ResourceDictionary>

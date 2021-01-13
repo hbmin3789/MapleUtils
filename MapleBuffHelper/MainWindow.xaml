@@ -17,7 +17,7 @@
                 <ContentControl Content="{StaticResource ProcessViewModel}"/>
             </TabItem>
             <TabItem Header="스킬 관리">
-                <ContentControl/>
+                <ContentControl Content="{StaticResource WzViewModel}"/>
             </TabItem>
         </TabControl>
         <ProgressBar Style="{StaticResource MaterialDesignCircularProgressBar}"
