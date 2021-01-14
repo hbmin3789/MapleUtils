@@ -1,4 +1,5 @@
-﻿using MapleStoryHelper.Standard.SkillLib.Model;
+﻿using MapleStoryHelper.Standard.Common;
+using MapleStoryHelper.Standard.SkillLib.Model;
 using MapleUtils.Core.ViewModels.Common;
 using Prism.Commands;
 using Prism.Mvvm;
@@ -25,8 +26,15 @@ namespace MapleUtils.Core.ViewModels
             set => SetProperty(ref _skillItems, value);
         }
 
-        private SkillBase _selectedKey;
-        public SkillBase SelectedKey
+        private SkillBase _selectedSkill;
+        public SkillBase SelectedSkll
+        {
+            get => _selectedSkill;
+            set => SetProperty(ref _selectedSkill, value);
+        }
+
+        private EWindowsKeyCode _selectedKey;
+        public EWindowsKeyCode SelectedKey
         {
             get => _selectedKey;
             set => SetProperty(ref _selectedKey, value);
@@ -36,13 +44,13 @@ namespace MapleUtils.Core.ViewModels
 
         public SkillViewModel() : base()
         {
-
+            
         }
 
 
         protected override void InitVariables()
         {
-            _skillItems = new ObservableCollection<SkillBase>();
+            _skillItems = new ObservableCollection<SkillBase>(new List<SkillBase>(70));
             _keyboardLayer = new ObservableCollection<SkillBase>();
         }
 
@@ -53,7 +61,8 @@ namespace MapleUtils.Core.ViewModels
 
         private void SetSkill()
         {
-            var idx = KeyboardLayer.IndexOf(SelectedKey);
+            var idx = (int)SelectedKey;
+            KeyboardLayer[idx] = SelectedSkll;
         }
 
         protected override void OnNavigate(Type t)

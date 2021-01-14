@@ -12,6 +12,7 @@
   <ItemGroup>
     <ProjectReference Include="..\MapleStory.Standard.Resource\MapleStoryHelper.Standard.Resource.csproj" />
     <ProjectReference Include="..\MapleStoryHelper.Standard.SkillLib\MapleStoryHelper.Standard.SkillLib.csproj" />
+    <ProjectReference Include="..\MapleStoryHelper.Standard\MapleStoryHelper.Standard.csproj" />
   </ItemGroup>
 
 </Project>
