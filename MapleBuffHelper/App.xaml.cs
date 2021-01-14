@@ -1,6 +1,8 @@
-﻿using MapleBuffHelper.Services;
+﻿using MapleBuffHelper.Common;
+using MapleBuffHelper.Services;
 using MapleBuffHelper.View;
 using MapleUtils.Core.ViewModels;
+using MapleUtils.Core.ViewModels.Common;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -18,6 +20,7 @@ namespace MapleBuffHelper
     {
         public static OverlayService OverlayService { get; set; }
         public static OverlayWindow OverlayWindow { get; set; }
+        public static Setting Setting { get; set; }
 
         protected override void OnStartup(StartupEventArgs e)
         {
@@ -30,11 +33,13 @@ namespace MapleBuffHelper
         {
             OverlayService = new OverlayService();
             OverlayWindow = new OverlayWindow();
+            Setting = new Setting();
         }
 
         private void InitServices()
         {
             ProcessViewModel.OverlayService = OverlayService;
+            ViewModelBase.SetSettingService(Setting);
         }
     }
 }

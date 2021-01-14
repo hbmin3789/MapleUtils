@@ -49,6 +49,9 @@
     <Reference Include="Microsoft.Xaml.Behaviors, Version=1.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Xaml.Behaviors.Wpf.1.1.19\lib\net45\Microsoft.Xaml.Behaviors.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="Prism, Version=8.0.0.1909, Culture=neutral, PublicKeyToken=40ee6c3a2184dc59, processorArchitecture=MSIL">
       <HintPath>..\packages\Prism.Core.8.0.0.1909\lib\net47\Prism.dll</HintPath>
     </Reference>
@@ -83,6 +86,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Common\Setting.cs" />
     <Compile Include="Controls\SkillControl.xaml.cs">
       <DependentUpon>SkillControl.xaml</DependentUpon>
     </Compile>
@@ -166,9 +170,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Common\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\MapleStoryHelper.Standard.SkillLib\MapleStoryHelper.Standard.SkillLib.csproj">
       <Project>{729051d4-0b61-4f10-b80c-fd605911f01b}</Project>
@@ -177,6 +179,10 @@
     <ProjectReference Include="..\MapleUtils.Core.ViewModels\MapleUtils.Core.ViewModels.csproj">
       <Project>{9b2b2e0c-f84b-43c3-be0e-83b74bf8c82c}</Project>
       <Name>MapleUtils.Core.ViewModels</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MapleUtils.Core\MapleUtils.Core.csproj">
+      <Project>{1e1e78ee-866b-4e17-9a33-5265ec497a2f}</Project>
+      <Name>MapleUtils.Core</Name>
     </ProjectReference>
     <ProjectReference Include="..\WzComparerR2.Common\WzComparerR2.Common.csproj">
       <Project>{7cdb3bdf-e196-42e5-9dac-aeb445fc27f2}</Project>
