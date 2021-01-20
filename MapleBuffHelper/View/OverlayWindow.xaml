@@ -12,7 +12,6 @@
         Background="Transparent"
         StateChanged="Window_StateChanged">
     <Grid>
-        <TextBlock Text="asd" Foreground="Red"
-                   FontSize="30" FontWeight="Bold"/>
+        
     </Grid>
 </Window>

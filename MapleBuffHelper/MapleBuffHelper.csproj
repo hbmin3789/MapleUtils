@@ -172,9 +172,17 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <ProjectReference Include="..\MapleStory.Standard.Resource\MapleStoryHelper.Standard.Resource.csproj">
+      <Project>{74bfa09c-b3c9-4a53-b758-a19c6ee3fc42}</Project>
+      <Name>MapleStoryHelper.Standard.Resource</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MapleStoryHelper.Standard.SkillLib\MapleStoryHelper.Standard.SkillLib.csproj">
       <Project>{729051d4-0b61-4f10-b80c-fd605911f01b}</Project>
       <Name>MapleStoryHelper.Standard.SkillLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MapleStoryHelper.Standard\MapleStoryHelper.Standard.csproj">
+      <Project>{f6cf8aa0-6a58-4d0b-bf95-181b7dafd418}</Project>
+      <Name>MapleStoryHelper.Standard</Name>
     </ProjectReference>
     <ProjectReference Include="..\MapleUtils.Core.ViewModels\MapleUtils.Core.ViewModels.csproj">
       <Project>{9b2b2e0c-f84b-43c3-be0e-83b74bf8c82c}</Project>
